@@ -1,0 +1,55 @@
+{
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Ayu Mirage",
+  "workbench.startupEditor": "newUntitledFile",
+  "editor.tabSize": 2,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "window.zoomLevel": 0,
+  // If on windows using WSL
+  // "terminal.integrated.shell.windows": "C:\\Windows\\System32\\bash.exe",
+  // If using arduino
+  // "arduino.path": "C:\\Program Files (x86)\\Arduino",
+  "terminal.integrated.fontFamily": "'Meslo LG S DZ for Powerline'",
+  "editor.fontFamily": "'FuraCode Nerd Font Mono', Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "prettier.eslintIntegration": true,
+  "prettier.semi": true,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "all",
+  "editor.formatOnSave": true,
+  "emmet.showSuggestionsAsSnippets": true,
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.syntaxProfiles": {
+    "javascript": "html"
+  },
+  "editor.snippetSuggestions": "top",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+  },
+  "files.associations": {
+    "*.js": "javascriptreact"
+  },
+  "files.eol": "\n",
+  "cSpell.userWords": [
+    "Cylon",
+    "Jackalope",
+    "antd",
+    "bookstack",
+    "borderless",
+    "connor",
+    "filepath",
+    "minielly",
+    "netlify",
+    "wsib"
+  ],
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "eslint.autoFixOnSave": true,
+  "window.titleBarStyle": "custom",
+  "breadcrumbs.enabled": false,
+  "editor.minimap.enabled": true,
+  "eslint.packageManager": "yarn"
+}

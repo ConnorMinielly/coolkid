@@ -1,0 +1,19 @@
+{
+  "name": "coolkid",
+  "version": "1.0.0",
+  "description": "A setup tool to help me automate assembling a new environment.",
+  "bin": {
+    "coolkid": "bin/function-junction.js"
+  },
+  "scripts": {
+    "start": "node bin/function-junction.js"
+  },
+  "author": "Connor Minielly",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "enquirer": "^2.3.0",
+    "ora": "^3.1.0",
+    "shelljs": "^0.8.3"
+  }
+}
