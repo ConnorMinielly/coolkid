@@ -1,10 +1,8 @@
-#!/usr/bin/env node
-
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 const chalk = require('chalk');
 
-extensions = [
+const extensions = [
   'apollographql.vscode-apollo',
   'bungcip.better-toml',
   'christian-kohler.npm-intellisense',
@@ -57,18 +55,18 @@ module.exports = async () => {
   const { err } = await exec('code --version');
 
   if (!err) {
-    console.log(chalk.green(`✓✓✓  VS Code found, installing extensions...`));
+    console.log(chalk`{green ✓  VS Code found, installing extensions...}`);
     for (const ext of extensions) {
-      const { err } = await exec(`code --install-extension ${ext}`);
-      err
-        ? console.log(chalk.green(`✓  Installed ${ext} successfully!`))
-        : console.log(chalk.red(`✗  Failed to install ${ext}!`));
+      try {
+        await exec(`code --install-extension ${ext}`);
+        console.log(chalk`{green ✓  Installed ${ext} successfully!}`);
+      } catch (err) {
+        console.log(chalk`{red ✗  Failed to install ${ext}!}`);
+      }
     }
   } else {
     console.log(
-      chalk.red(
-        `✗✗✗  VS Code not detected on system, please install VS Code first.`,
-      ),
+      chalk`{red ✗  VS Code not detected on system, please install VS Code first.}`,
     );
   }
 };

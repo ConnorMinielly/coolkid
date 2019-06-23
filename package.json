@@ -1,7 +1,10 @@
 {
   "name": "coolkid",
   "version": "1.0.0",
-  "description": "A setup tool to help me automate assembling a new environment.",
+  "description": "A setup tool to help automate assembling a new environment, for cool kids 😎👉👉",
+  "engines": {
+    "node": ">=11.0.0"
+  },
   "bin": {
     "coolkid": "bin/function-junction.js"
   },
@@ -15,5 +18,9 @@
     "enquirer": "^2.3.0",
     "ora": "^3.1.0",
     "shelljs": "^0.8.3"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-plugin-node": "^8.0.1"
   }
 }

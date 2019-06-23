@@ -1,6 +1,9 @@
+#!/usr/bin/env node
 const { MultiSelect } = require('enquirer');
-const installer = require('./vscode-extensions');
 const ora = require('ora');
+const chalk = require('chalk');
+
+console.log(chalk.blue`Hello fellow cool kids! 😎👉👉`);
 
 const prompt = new MultiSelect({
   name: 'setup',
@@ -8,19 +11,24 @@ const prompt = new MultiSelect({
   hint: '(Use <space> to select, <a> for all, and <return> to submit)',
   choices: [
     {
-      name: 'Node Environment',
-      value: 'nodeenv',
-      hint: '\t\tinstall node, yarn, nvm',
+      name: 'Programming Languages',
+      value: './installers/language-installer.js',
+      hint: '\t\tInstall programming languages/engines (Node, Go, Rust)',
+    },
+    {
+      name: 'Terminal',
+      value: './installer/terminal-installer.js',
+      hint: '\t\tSetup spaceship prompt terminal (requires Node).',
+    },
+    {
+      name: 'Software',
+      value: './installer/software-installer.js',
+      hint: '\t\tInstall a selection of must-have software.',
     },
     {
       name: 'VS Code Extensions',
-      value: 'vscode-extensions.js',
-      hint: '\t\tinstall my fav extensions',
-    },
-    {
-      name: 'Global Node Packages',
-      value: 'globalnpm',
-      hint: '\t\tglobally install things like CRA and Gatsby',
+      value: './installer/extension-installer.js',
+      hint: '\t\tInstall my fav extensions for vscode.',
     },
   ],
   result(names) {
@@ -29,7 +37,7 @@ const prompt = new MultiSelect({
 });
 
 prompt.run().then(async answers => {
-  const running_man;
+  let running_man = {};
   for (const answer of Object.values(answers)) {
     const aspect = require(answer);
     running_man = ora({
