@@ -17,17 +17,17 @@ const prompt = new MultiSelect({
     },
     {
       name: 'Terminal',
-      value: './installer/terminal-installer.js',
+      value: './installers/terminal-installer.js',
       hint: '\t\tSetup spaceship prompt terminal (requires Node).',
     },
     {
       name: 'Software',
-      value: './installer/software-installer.js',
+      value: './installers/software-installer.js',
       hint: '\t\tInstall a selection of must-have software.',
     },
     {
       name: 'VS Code Extensions',
-      value: './installer/extension-installer.js',
+      value: './installers/extension-installer.js',
       hint: '\t\tInstall my fav extensions for vscode.',
     },
   ],

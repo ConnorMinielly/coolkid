@@ -1,5 +1,4 @@
-const util = require('util');
-const exec = util.promisify(require('child_process').exec);
+const exec = require('shelljs').exec;
 const chalk = require('chalk');
 
 const linuxCmds = {
@@ -18,7 +17,7 @@ module.exports = async () => {
   console.log(chalk`{blue Installing snappable software.}`);
   for (const cmd of Object.entries(linuxCmds)) {
     try {
-      await exec(cmd[1]);
+      await exec(cmd[1], { async: true });
       console.log(chalk`{green Installed ${cmd[0]}.}`);
     } catch (err) {
       console.log(chalk`{red.bold Failed to install ${cmd[0]}.}`);

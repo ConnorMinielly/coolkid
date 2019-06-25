@@ -1,5 +1,4 @@
-const util = require('util');
-const exec = util.promisify(require('child_process').exec);
+const exec = require('shelljs').exec;
 const chalk = require('chalk');
 
 const extensions = [
@@ -52,13 +51,13 @@ const extensions = [
 ];
 
 module.exports = async () => {
-  const { err } = await exec('code --version');
+  const { err } = await exec('code --version', { async: true });
 
   if (!err) {
     console.log(chalk`{green ✓  VS Code found, installing extensions...}`);
     for (const ext of extensions) {
       try {
-        await exec(`code --install-extension ${ext}`);
+        await exec(`code --install-extension ${ext}`, { async: true });
         console.log(chalk`{green ✓  Installed ${ext} successfully!}`);
       } catch (err) {
         console.log(chalk`{red ✗  Failed to install ${ext}!}`);

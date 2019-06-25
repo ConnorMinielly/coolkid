@@ -1,6 +1,7 @@
 {
   "name": "coolkid",
   "version": "1.0.0",
+  "author": "Connor Minielly",
   "description": "A setup tool to help automate assembling a new environment, for cool kids 😎👉👉",
   "engines": {
     "node": ">=11.0.0"
@@ -11,7 +12,6 @@
   "scripts": {
     "start": "node bin/function-junction.js"
   },
-  "author": "Connor Minielly",
   "license": "MIT",
   "dependencies": {
     "chalk": "^2.4.2",

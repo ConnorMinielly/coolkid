@@ -1,13 +1,14 @@
 # A Config ⚙️ Tool For Cool Kids Like Me and You 🕶️
 
-This is a repo/tool to track all the tools and configs I use in my Dev environment and day to day work so it's easy to update/reinstall operating systems and tools.
+This is a repo/tool to track all the tools, configs and softwares I use in my Dev environment and day to day work so it's easy to update/reinstall operating systems so on.
 
 Feel free to make recommendations via PRs or throw up Issues if you think I should change my setup. Friends don't let friends use software with well known security exploits or embedded crypto miners right?
 
-One should be able to install the below using
+One should be able to install/use coolkid with below:
 
 ```bash
-coolkid --[flag]
+npm i -g coolkid # Locally install cli
+npx coolkid # Run without installing
 ```
 
 where flag is the thing you're trying to setup.

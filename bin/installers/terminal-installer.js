@@ -1,5 +1,4 @@
-const util = require('util');
-const exec = util.promisify(require('child_process').exec);
+const exec = require('shelljs').exec;
 const chalk = require('chalk');
 
 const term = {
@@ -11,11 +10,11 @@ const term = {
 module.exports = async () => {
   console.log(chalk`{blue Trying to install terminal requirements!}`);
   try {
-    await exec(term.font);
+    await exec(term.font, { async: true });
     console.log(`{green ✓  Installed font!}`);
-    await exec(term.zsh);
+    await exec(term.zsh, { async: true });
     console.log(`{green ✓  Installed zsh!}`);
-    await exec(term.prompt);
+    await exec(term.prompt, { async: true });
     console.log(`{green ✓  Installed spaceship-prompt!}`);
   } catch (err) {
     console.log(`{red ✗  Failed to install terminal requirement!}`);
